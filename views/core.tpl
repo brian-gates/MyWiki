@@ -5,8 +5,8 @@
 <title>{{upcasename}}</title>
 <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
 </head>
-<body>
 
+<body>
 <div class="sideBar" style="display:none" id="mySidebar">
   <button class="barButton"
   onclick="sideBar_close()">&times;</button>
@@ -20,15 +20,27 @@
   <div class="topBar">
     <button class="topButton" onclick="sideBar_open()">&#9776;</button>
     <div class="container">
-      <h1>{{upcasename}}</h1>
+      <h1>MyWiki</h1>
     </div>
   </div>
 
+  <div class="header">
+    <div class="container">
+      <h2>{{upcasename}}</h2>
+    </div>
+  </div>
 
   <div class="bodytext" id="PageEntry">
       {{!bodytext}}
   </div>
 
+
+</div>
+
+<div class="articlefoot">
+  <a href="/delete/{{pagename}}" class="footerbox">Delete</a>
+  <a href="/rename/{{pagename}}" class="footerbox">Rename</a>
+  <a href="/edit/existing/{{pagename}}" class="footerbox">Edit</a>
 </div>
 
 <script>

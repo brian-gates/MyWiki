@@ -2,7 +2,7 @@
 <html>
   <head>
     %upcasename = str.title(pagename)
-    <title>Edit Complete</title>
+    <title>Edit: {{upcasename}}</title>
     <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
   </head>
   <body>
@@ -20,22 +20,40 @@
       <div class="topBar">
         <button class="topButton" onclick="sideBar_open()">&#9776;</button>
         <div class="container">
-          <h1>Edit Complete</h1>
+          <h1>MyWiki</h1>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="container">
+          <h2>{{upcasename}}</h2>
         </div>
       </div>
 
 
       <div class="bodytext" id="PageEntry">
         <p>
-          Your edit of <b><a href="/wiki/{{pagename}}">{{pagename}}</a></b> is complete.
+          <form action="/edit/{{pagename}}", method="POST">
+            <textarea name="PageData" rows="25" cols="100" required>
+              <p>
+                {{bodytext}}
+              </p>              
+            </textarea>
+            <input type="Submit" value="Publish" />
+          </form>
         </p>
       </div>
     </div>
+
+
+<!--begin footer and scripts -->
+
     <div class="articlefoot">
       <a href="/delete/{{pagename}}" class="footerbox">Delete</a>
       <a href="/rename/{{pagename}}" class="footerbox">Rename</a>
       <a href="/edit/existing/{{pagename}}" class="footerbox">Edit</a>
     </div>
+
     <script>
       function sideBar_open() {
         document.getElementById("main").style.marginLeft = "15%";

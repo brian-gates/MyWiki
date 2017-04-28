@@ -20,30 +20,46 @@
       <div class="topBar">
         <button class="topButton" onclick="sideBar_open()">&#9776;</button>
         <div class="container">
-          <h1>Edit: {{upcasename}}</h1>
+          <h1>MyWiki</h1>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="container">
+          <h2>{{upcasename}}</h2>
         </div>
       </div>
 
 
       <div class="bodytext" id="PageEntry">
-          <p>
-            <form action="/edit/{{pagename}}", method="POST">
-              <textarea name="PageData" rows="25" cols="100" placeholder="Enter wiki text..." required></textarea>
-              <input type="Submit" value="Publish" />
-            </form>
-          </p>
-        </div>
+        <p>
+          <form action="/edit/{{pagename}}", method="POST">
+            <textarea name="PageData" rows="25" cols="100" placeholder="Enter wiki text..." required></textarea>
+            <input type="Submit" value="Publish" />
+          </form>
+        </p>
       </div>
-      <script>
-        function sideBar_open() {
-          document.getElementById("main").style.marginLeft = "15%";
-          document.getElementById("mySidebar").style.width = "15%";
-          document.getElementById("mySidebar").style.display = "block";
-        }
-        function sideBar_close() {
-          document.getElementById("main").style.marginLeft = "0%";
-          document.getElementById("mySidebar").style.display = "none";
-        }
-      </script>
+    </div>
+
+
+<!--begin footer and scripts -->
+
+    <div class="articlefoot">
+      <a href="/delete/{{pagename}}" class="footerbox">Delete</a>
+      <a href="/rename/{{pagename}}" class="footerbox">Rename</a>
+      <a href="/edit/existing/{{pagename}}" class="footerbox">Edit</a>
+    </div>
+
+    <script>
+      function sideBar_open() {
+        document.getElementById("main").style.marginLeft = "15%";
+        document.getElementById("mySidebar").style.width = "15%";
+        document.getElementById("mySidebar").style.display = "block";
+      }
+      function sideBar_close() {
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+      }
+    </script>
   </body>
 </html>
