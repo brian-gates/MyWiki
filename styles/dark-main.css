@@ -1,5 +1,5 @@
 body {
-  background-color: #212121;
+  background-color: #303131;
   font-family:sans-serif;
   color: #E3E3E3;
   font-size: 0.9em;
@@ -32,13 +32,14 @@ a:hover {
   text-decoration: none;
 }
 
-
+/*727285*/
 textarea {
-  background-color: #727285;
+  background-color: #292929;
   border: 3px dashed #F7FFB3;
   color: #E3E3E3;
   font-family:sans-serif;
   float:left;
+  text-align: left;
 }
 
 input[type=submit] {
@@ -57,9 +58,63 @@ input[type=submit] {
   transition: margin-left 0.5s;
 }
 
+.header .container {
+  background-color: #383838;
+  margin: 0;
+  width: auto;
+}
+
+.articlefoot {
+  background-color: #212121;
+  margin: 0;
+  width: 100%;
+  position:fixed;
+  bottom: 0;
+}
+
+.articlefoot a {
+  float:right;
+  height: 100px;
+  display: inline-block;
+  width:100px;
+  font-family: sans-serif;
+  text-align:center;
+  vertical-align: middle;
+  line-height: 100px;
+  background-color: #212121;
+  border:none;
+  outline:0;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+  white-space:normal;
+  font-size: 1.2em;
+}
+
+.footerbox:hover {
+  background-color:#303030;
+}
+
 .topBar {
   color:#fff;
-  background-color:#303030;
+  background-color:#212121;
+  }
+
+.topButton {
+  border:none;
+  display:inline-block;
+  outline:0;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  font-size:24px;
   }
 
 .sideBar {
@@ -113,34 +168,20 @@ input[type=submit] {
   background-color:#373737;
 }
 
-.topButton {
-  border:none;
-  display:inline-block;
-  outline:0;
-  padding:8px 16px;
-  vertical-align:middle;
-  overflow:hidden;
-  text-decoration:none;
-  color:inherit;
-  background-color:inherit;
-  text-align:center;
-  cursor:pointer;
-  white-space:nowrap;
-  font-size:24px;
-}
-
 .container {
   padding:0.01em 16px;
 }
 
-#PageEntry {
+
+.bodytext {
   font-family:sans-serif;
   color: #E3E3E3;
   font-size: 0.9em;
-  padding:16px 16px;
+  padding: 16px 16px
 }
 
-#PageEntry::first-letter {
+
+.bodytext::first-letter {
   font-family:cursive;
-  font-size: 2em;
+  font-size: 2.5em;
 }
