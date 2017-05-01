@@ -2,6 +2,7 @@
 <html>
   <head>
     %upcasename = str.title(pagename)
+    %bodytext = str.strip(bodytext)
     <title>Edit: {{upcasename}}</title>
     <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
   </head>
@@ -34,11 +35,7 @@
       <div class="bodytext" id="PageEntry">
         <p>
           <form action="/edit/{{pagename}}", method="POST">
-            <textarea name="PageData" rows="25" cols="100" required>
-              <p>
-                {{bodytext}}
-              </p>              
-            </textarea>
+            <textarea name="PageData" rows="25" cols="100" required>{{bodytext}}</textarea>
             <input type="Submit" value="Publish" />
           </form>
         </p>

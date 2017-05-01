@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+%pagename = pagename.replace('_',' ')
 %upcasename = str.title(pagename)
+%bodytext = str.strip(bodytext)
 <title>{{upcasename}}</title>
 <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
 </head>
@@ -30,9 +32,7 @@
     </div>
   </div>
 
-  <div class="bodytext" id="PageEntry">
-      {{!bodytext}}
-  </div>
+  <div class="bodytext" id="PageEntry">{{!bodytext}}</div>
 
 
 </div>
