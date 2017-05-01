@@ -32,7 +32,7 @@ a:hover {
   text-decoration: none;
 }
 
-/*727285*/
+
 textarea {
   background-color: #292929;
   border: 3px dashed #F7FFB3;
@@ -168,6 +168,7 @@ input[type=submit] {
   background-color:#373737;
 }
 
+
 .container {
   padding:0.01em 16px;
 }
@@ -177,7 +178,8 @@ input[type=submit] {
   font-family:sans-serif;
   color: #E3E3E3;
   font-size: 0.9em;
-  padding: 16px 16px
+  padding: 16px 16px;
+  width:500px;
 }
 
 
