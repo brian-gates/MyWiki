@@ -7,7 +7,7 @@ Italics         | <i> ... </i>                    | [i: ... :i] | in-progress
 Internal Link   | <a href="#"> ... </a>           | [F: ... :F] | implemented
 External Link   | <a href="#"> ... </a>           |     ...     | coming soon
 Image           | <img src="#" />                 |     ...     | coming soon
-Subscript       | <sub> ... </sub>                | [s: ... :s] | in-progress
-Superscript     | <sup> ... </sup>                | [S: ... :S] | in-progress
-Quote           | <blockquote> ... </blockquote>  | [q: ... :q] | in-progress
-Paragraph       | <p> ... </p>                    | [p: ... :p] | in-progress
+Subscript       | <sub> ... </sub>                | [s: ... :s] | implemented
+Superscript     | <sup> ... </sup>                | [S: ... :S] | implemented
+Quote           | <blockquote> ... </blockquote>  | [q: ... :q] | implemented
+Paragraph       | <p> ... </p>                    | [p: ... :p] | implemented
