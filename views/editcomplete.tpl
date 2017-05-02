@@ -11,7 +11,7 @@
       <button class="barButton"
       onclick="sideBar_close()">&times;</button>
       <a href="/wiki/main" class="sideBarItem">Home</a>
-      <a href="#" class="sideBarItem">About</a>
+      <a href="/wiki/about" class="sideBarItem">About</a>
       <a href="#" class="sideBarItem">Contact</a>
     </div>
 
@@ -20,7 +20,13 @@
       <div class="topBar">
         <button class="topButton" onclick="sideBar_open()">&#9776;</button>
         <div class="container">
-          <h1>Edit Complete</h1>
+          <h1>MyWiki</h1>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="container">
+          <h2>Edit: Complete</h2>
         </div>
       </div>
 
@@ -32,9 +38,9 @@
       </div>
     </div>
     <div class="articlefoot">
-      <a href="/delete/{{pagename}}" class="footerbox">Delete</a>
-      <a href="/rename/{{pagename}}" class="footerbox">Rename</a>
-      <a href="/edit/existing/{{pagename}}" class="footerbox">Edit</a>
+      <a href="#" class="footerbox">Delete</a>
+      <a href="#" class="footerbox">Rename</a>
+      <a href="#" class="footerbox">Edit</a>
     </div>
     <script>
       function sideBar_open() {

@@ -2,7 +2,7 @@
 <html>
   <head>
     %upcasename = str.title(pagename)
-    <title>Edit: {{upcasename}}</title>
+    <title>Create: {{upcasename}}</title>
     <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
   </head>
   <body>
@@ -11,7 +11,7 @@
       <button class="barButton"
       onclick="sideBar_close()">&times;</button>
       <a href="/wiki/main" class="sideBarItem">Home</a>
-      <a href="#" class="sideBarItem">About</a>
+      <a href="/wiki/about" class="sideBarItem">About</a>
       <a href="#" class="sideBarItem">Contact</a>
     </div>
 
@@ -26,7 +26,7 @@
 
       <div class="header">
         <div class="container">
-          <h2>{{upcasename}}</h2>
+          <h2>Create: {{upcasename}}</h2>
         </div>
       </div>
 
@@ -45,9 +45,9 @@
 <!--begin footer and scripts -->
 
     <div class="articlefoot">
-      <a href="/delete/{{pagename}}" class="footerbox">Delete</a>
-      <a href="/rename/{{pagename}}" class="footerbox">Rename</a>
-      <a href="/edit/existing/{{pagename}}" class="footerbox">Edit</a>
+      <a href="#" class="footerbox">Delete</a>
+      <a href="#" class="footerbox">Rename</a>
+      <a href="#" class="footerbox">Edit</a>
     </div>
 
     <script>

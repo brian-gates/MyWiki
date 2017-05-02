@@ -2,8 +2,7 @@
 <html>
   <head>
     %upcasename = str.title(pagename)
-    %bodytext = str.strip(bodytext)
-    <title>Edit: {{upcasename}}</title>
+    <title>Rename: {{upcasename}}</title>
     <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
   </head>
   <body>
@@ -27,20 +26,16 @@
 
       <div class="header">
         <div class="container">
-          <h2>{{upcasename}}</h2>
+          <h2>Rename: {{upcasename}}</h2>
         </div>
       </div>
 
 
       <div class="bodytext" id="PageEntry">
         <p>
-          <form action="/edit/{{pagename}}", method="POST">
-            <textarea name="PageData" rows="25" cols="100" required>{{bodytext}}</textarea>
-            <br />
+          <form action="/rename/{{pagename}}", method="POST">
+            <input type="text" name="newpagename" placeholder="New page name" required autofocus />
             <input type="Submit" value="Publish" />
-            <div  id="cancel-button">
-              <a href="/wiki/{{pagename}}">Cancel</a>
-            </div>
           </form>
         </p>
       </div>

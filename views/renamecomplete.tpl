@@ -2,8 +2,7 @@
 <html>
   <head>
     %upcasename = str.title(pagename)
-    %bodytext = str.strip(bodytext)
-    <title>Edit: {{upcasename}}</title>
+    <title>Rename Complete</title>
     <link rel="stylesheet" type="text/css" href="/styles/dark-main.css" />
   </head>
   <body>
@@ -25,36 +24,18 @@
         </div>
       </div>
 
-      <div class="header">
-        <div class="container">
-          <h2>{{upcasename}}</h2>
-        </div>
-      </div>
-
 
       <div class="bodytext" id="PageEntry">
         <p>
-          <form action="/edit/{{pagename}}", method="POST">
-            <textarea name="PageData" rows="25" cols="100" required>{{bodytext}}</textarea>
-            <br />
-            <input type="Submit" value="Publish" />
-            <div  id="cancel-button">
-              <a href="/wiki/{{pagename}}">Cancel</a>
-            </div>
-          </form>
+          Your rename of <b>{{pagename}}</b> to <b><a href="/wiki/{{newNameForURL}}">{{newName}}</a></b> is complete.
         </p>
       </div>
     </div>
-
-
-<!--begin footer and scripts -->
-
     <div class="articlefoot">
       <a href="#" class="footerbox">Delete</a>
       <a href="#" class="footerbox">Rename</a>
       <a href="#" class="footerbox">Edit</a>
     </div>
-
     <script>
       function sideBar_open() {
         document.getElementById("main").style.marginLeft = "15%";
