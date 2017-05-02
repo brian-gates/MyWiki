@@ -9,7 +9,9 @@ body {
 p {
   font-family:sans-serif;
   color: #E3E3E3;
-  font-size: 0.9em;
+  font-size: 1.1em;
+  text-align: justify;
+  margin-bottom: 1em;
 }
 
 a:link {
@@ -32,6 +34,18 @@ a:hover {
   text-decoration: none;
 }
 
+hr {
+  display: block;
+  color: #B3F5FF;
+  margin-top: 0.25em;
+  margin-bottom: 0.75em;
+  border: 2px dashed #B3F5FF;
+}
+
+h3 {
+  margin-top: 1em;
+  color: #EEF2BF;
+}
 
 textarea {
   background-color: #292929;
@@ -45,13 +59,28 @@ textarea {
 input[type=submit] {
   background-color: #F7FFB3;
   cursor: pointer;
-  border-style:dotted;
-  border-color: #B3F5FF;
-  border-radius: 10px 40px;
-  border-width: 4px;
+  height: 50px;
+  width: 100px;
   float:left;
+  display:inline;
   clear:left;
   color: #626273;
+  border: none;
+}
+
+#cancel-button a {
+  background-color: #B3FFFE;
+  cursor:pointer;
+  white-space:normal;
+  height: 50px;
+  width: 100px;
+  float:left;
+  display:inline;
+  color: #626273;
+  border: none;
+  text-align:center;
+  vertical-align: middle;
+  line-height: 49px;
 }
 
 #main {
@@ -179,11 +208,39 @@ input[type=submit] {
   color: #E3E3E3;
   font-size: 0.9em;
   padding: 16px 16px;
-  width:500px;
+  width:1000px;
+  text-align: justify;
 }
 
 
-.bodytext::first-letter {
-  font-family:cursive;
-  font-size: 2.5em;
+::-webkit-scrollbar {
+  background-color: #212121;
+  width: 10px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #606060;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #606060;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #303030;
+    border-radius: 10px;
+    border: 1px solid #323232;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #212121;
+}
+
+::-webkit-resizer {
+  background-color: #212121;
 }
