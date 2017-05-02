@@ -3,12 +3,13 @@
 ################################################################################
 
 from bottle import route, run, template, static_file, post, request, get
-import os.path
+import os.path, os
 
 #####---------------------Main-page-view-functions-------------------------#####
 
 @route('/wiki/<pagename>')
 def build(pagename='main'):
+    #Serves either an edit dialog or an existing page
     if not os.path.isfile('./content/' + str(pagename)):
         return template('editcreate', pagename=pagename)
     else:
@@ -18,8 +19,8 @@ def build(pagename='main'):
 
 @route('/edit/<pagename>', method='POST')
 def createedit(pagename):
-    #PageData is a string
-    pagedata = request.forms.get('PageData')
+    #Commits the edits supplied to it from 'build' or 'editExisting'
+    pagedata = request.forms.get('PageData') #comes in as a string
     pagedata = stripHTML(pagedata)
     pagedata = alinkbuild(pagedata)
     pagedata = swapScript(pagedata,'ToHTML')
@@ -30,6 +31,7 @@ def createedit(pagename):
 
 @route('/edit/existing/<pagename>')
 def editExisting(pagename):
+    #Serves an edit page for a pre-existing article
     with open('./content/' + pagename, 'r') as textfile:
         bodytext = textfile.read()
         bodytext = alinkunbuild(bodytext)
@@ -37,9 +39,32 @@ def editExisting(pagename):
         bodytext = str.strip(bodytext)
     return template('editexisting', pagename=pagename, bodytext=bodytext)
 
+@route('/rename/<pagename>', method='POST')
+def renameExisting(pagename):
+    #Renames an existing page and is fed from a function titled 'renameEntry'
+    newName = request.forms.get('newpagename')
+    newNameForURL = newName.replace(' ','_')
+    os.rename('./content/' + pagename, './content/' + newNameForURL)
+    return template('renamecomplete', pagename=pagename, newName=newName, newNameForURL=newNameForURL)
+
+@route('/rename/existing/<pagename>')
+def renameEntry(pagename):
+    #Serves an edit page to change an article's name
+    return template('rename', pagename=pagename)
+
+@route('/delete/<pagename>')
+def deleteArticle(pagename):
+    if os.path.isfile('./content/' + pagename):
+        os.remove('./content/' + pagename)
+        deletestatus = 'was successful.'
+        return template('deletecomplete', pagename=pagename, deletestatus=deletestatus)
+    else:
+        deletestatus = 'failed. The article did not exist.'
+        return template('deletecomplete', pagename=pagename, deletestatus=deletestatus)
 
 @route('/styles/<css>')
 def servestyle(css):
+    #This serves the CSS to the templates
     return static_file(css,root='./styles/')
 
 
@@ -72,7 +97,6 @@ def alinkunbuild(string):
 #Deconstructs hyperlinks back into Wikicode for the edit textarea box
     instances = string.lower()
     instances = string.count('<a href=')
-    print instances
     if instances > 0:
         for x in range(instances):
             start = string.lower().find('<a href=')
@@ -80,7 +104,6 @@ def alinkunbuild(string):
             linktext = string[start:end]
             string = string.replace(linktext,'[F: ')
             string = string.replace('</a>',' :F]')
-        print string
         return string
     else:
         return string
@@ -107,7 +130,11 @@ def swapScript(string,direction='FromHTML'):
     ['<sub>','[s: '],['</sub>',' :s]'],
     ['<sup>','[S: '],['</sup>',' :S]'],
     ['<blockquote>','[q: '],['</blockquote>',' :q]'],
-    ['<p>','[p: '],['</p>',' :p]']
+    ['<p>','[p: '],['</p>',' :p]'],
+    ['<h3>','[h: '],['</h3><hr>',' :h]'],
+    ['<ul>','[L: '],['</ul',' :L]'],
+    ['<li>','[l: '],['</li>',' :l]'],
+    ['<br>','[n: ']
     ]
 
     for x in tags:
