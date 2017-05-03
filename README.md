@@ -21,7 +21,7 @@ Once downlaoded, simply run myWiki.py from the directory hosting all of the prog
 Use
 --------------------------------------------------------
 
-Out of the box MyWiki has an about page and a hom/main page. Both of which cannot be edited from within the app UI. They can, however, be edited by hand in the content folder. When editing them, use standard HTML (not MyWikiCode). To create more pages you just need to navigate to the page you'd like to create, as follows:
+Out of the box MyWiki has an about page and a home/main page. Both of which cannot be edited from within the app UI. They can, however, be edited by hand in the content folder. When editing them, use standard HTML (not MyWikiCode). To create more pages you just need to navigate to the page you'd like to create, as follows:
 
 http://localhost:8080/wiki/foo
 
