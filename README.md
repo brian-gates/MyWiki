@@ -8,7 +8,7 @@ Bottle (pip install bottle)
 Python 2.x (originally built with 2.7.12)
 
 --------------------------------------------------------
-+Install++++++++++++++++++++++++++++++++++++++++++++++++
+Install
 --------------------------------------------------------
 
 To install a local instance of MyWiki simply copy or clone the repository to a fodler on your drive. Make sure you have the requirements downloaded. Bottle can be acquired through pip or through the developer site as a downloadable python file. I have used the pip method during development.
@@ -18,7 +18,7 @@ Once downlaoded, simply run myWiki.py from the directory hosting all of the prog
 
 
 --------------------------------------------------------
-+Use++++++++++++++++++++++++++++++++++++++++++++++++++++
+Use
 --------------------------------------------------------
 
 Out of the box MyWiki has an about page and a hom/main page. Both of which cannot be edited from within the app UI. They can, however, be edited by hand in the content folder. When editing them, use standard HTML (not MyWikiCode). To create more pages you just need to navigate to the page you'd like to create, as follows:
@@ -30,7 +30,7 @@ Just replace foo with whatever page you would like. In general, use underscores 
 
 
 --------------------------------------------------------
-+Features+++++++++++++++++++++++++++++++++++++++++++++++
+Features
 --------------------------------------------------------
 
 - Lightweight
@@ -41,8 +41,10 @@ Just replace foo with whatever page you would like. In general, use underscores 
 - With some minor coding, the ability to add static pages to the menu
 - A robust template system via Bottle's built in template / tpl system, which allows for python code to be run in-line with html
 
+
+
 --------------------------------------------------------
-+To-Do++++++++++++++++++++++++++++++++++++++++++++++++++
+To-Do
 --------------------------------------------------------
 
 - Simplify the CSS structure
