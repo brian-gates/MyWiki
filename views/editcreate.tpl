@@ -36,6 +36,9 @@
           <form action="/edit/{{pagename}}", method="POST">
             <textarea name="PageData" rows="25" cols="100" placeholder="Enter wiki text..." required></textarea>
             <input type="Submit" value="Publish" />
+            <div  id="cancel-button">
+              <a href="/wiki/{{pagename}}">Cancel</a>
+            </div>
           </form>
         </p>
       </div>
