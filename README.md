@@ -1,11 +1,11 @@
 # MyWiki
-Yet another Wiki. Apparently the world does not have enough of them.
 
-MyWiki (To be renamed at a later point) is a Python based wiki utilizing the Bottle microframework.
+MyWiki (To be renamed at a later point) is a Python based wiki utilizing the Bottle microframework. Why another Python wiki, or another wiki at all? For the fun of it, mixed with to improve upon features I found lacking in other lightweight Python wiki's. I am targeting the PirateBox/LibraryBox community as a possible use case for this, as I have enjoyed MonkeyWiki on my PirateBox quite a bit, but thought it would be fun to expand on the concept.
 
 Requirements:
-Bottle (pip install bottle)
-Python 2.x (originally built with 2.7.12)
+---------------
+- Bottle (pip install bottle)
+- Python 2.x (originally built with 2.7.12)
 
 --------------------------------------------------------
 Install
