@@ -96,17 +96,39 @@ def alinkbuild(string):
 def alinkunbuild(string):
 #Deconstructs hyperlinks back into Wikicode for the edit textarea box
     instances = string.lower()
-    instances = string.count('<a href=')
+    instances = instances.count('<a href=')
+    linklist = []
+    marker = 0
+    if instances > 0:
+        for x in range(instances):
+            start = string.lower().find('<a href=',marker)
+            end = string.find('>',start + 1) + 1
+            linklist.append(string[start:end])
+            marker = end + 1
+        print set(linklist)
+        for y in set(linklist):
+            string = string.replace(y,'[F: ')
+        string = string.replace('</a>',' :F]')
+        return string
+    else:
+        return string
+
+#old version
+"""def alinkunbuild(string):
+#Deconstructs hyperlinks back into Wikicode for the edit textarea box
+    instances = string.lower()
+    instances = instances.count('<a href=')
     if instances > 0:
         for x in range(instances):
             start = string.lower().find('<a href=')
             end = string.find('>',start + 1) + 1
             linktext = string[start:end]
+            print linktext
             string = string.replace(linktext,'[F: ')
             string = string.replace('</a>',' :F]')
         return string
     else:
-        return string
+        return string"""
 
 def stripHTML(string):
 #Will strip all html tags from a string
