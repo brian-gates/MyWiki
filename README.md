@@ -4,7 +4,7 @@ MyWiki (To be renamed at a later point) is a Python based wiki utilizing the Bot
 
 Requirements:
 ---------------
-- Bottle (pip install bottle)
+- Bottle (`pip install bottle`)
 - Python 2.x (originally built with 2.7.12)
 
 --------------------------------------------------------
@@ -13,10 +13,13 @@ Install
 
 To install a local instance of MyWiki simply copy or clone the repository to a fodler on your drive. Make sure you have the requirements downloaded. Bottle can be acquired through pip or through the developer site as a downloadable python file. I have used the pip method during development.
 
-Once downlaoded, simply run myWiki.py from the directory hosting all of the program files and direct your browser to port 8080 of localhost. You can set it up to run on a different port if you'd like. You can do so at the bottom of myWiki.py. I have played around with running the bottle server on my local machine with my IP rather than localhost, so that friends on my network could check things out... this results in performance issues that I believe to be related to the server that bottle builds by default. For any kind of large scale server deployment you will want to read the deployment section of Bottle's documentation (which covers a number of server infrastructures/technologies).
+Once downloaded, simply run myWiki.py from the directory hosting all of the program files and direct your browser to port 8080 of localhost. You can set it up to run on a different port if you'd like. You can do so at the bottom of myWiki.py. I have played around with running the bottle server on my local machine with my IP rather than localhost, so that friends on my network could check things out... this results in performance issues that I believe to be related to the server that bottle builds by default. For any kind of large scale server deployment you will want to read the deployment section of Bottle's documentation (which covers a number of server infrastructures/technologies).
 
-
-
+### Running via Docker
+```
+docker build -t mywiki .
+docker run -it -rm mywiki
+```
 --------------------------------------------------------
 Use
 --------------------------------------------------------
